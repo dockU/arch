@@ -34,6 +34,10 @@ ln -s /usr/share/zoneinfo/Etc/UTC $rootfs/etc/localtime
 echo 'en_US.UTF-8 UTF-8' > $rootfs/etc/locale.gen
 arch-chroot $rootfs locale-gen >/dev/null
 
+echo 'Copy over skel configuration'
+git clone git://github.com/fly/dotfiles /tmp/dotfiles &>/dev/null
+(cd /tmp/dotfiles && make TARGET="$rootfs/etc/skel/" install &>/dev/null)
+
 echo 'Install runit'
 git clone git://github.com/akerl/runit /opt/runit &>/dev/null
 (cd /opt/runit && ./package/compile &>/dev/null)
