@@ -4,7 +4,7 @@ docku/arch
 [![Trusted Build](http://img.shields.io/badge/trusted-build-green.svg)](https://index.docker.io/u/docku/arch/)
 [![MIT Licensed](http://img.shields.io/badge/license-MIT-green.svg)](https://tldrlegal.com/license/mit-license)
 
-A minimal Arch container
+A minimal Arch container, based on [dock0/arch](https://github.com/dock0/arch).
 
 ## To generate
 
