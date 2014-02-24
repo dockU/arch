@@ -30,7 +30,7 @@ arch-chroot $rootfs pacman-key --init &>/dev/null
 arch-chroot $rootfs pacman-key --populate &>/dev/null
 
 echo 'Set timezone and locale'
-ln -s /usr/share/zoneinfo/US/Eastern $rootfs/etc/localtime
+ln -s /usr/share/zoneinfo/Etc/UTC $rootfs/etc/localtime
 echo 'en_US.UTF-8 UTF-8' > $rootfs/etc/locale.gen
 arch-chroot $rootfs locale-gen >/dev/null
 
